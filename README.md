@@ -4,10 +4,10 @@
 
 [![Build Status](https://travis-ci.org/PatronBase/omnipay-smartpay.png?branch=master)](https://travis-ci.org/PatronBase/omnipay-smartpay)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/PatronBase/omnipay-smartpay.svg?style=flat)](https://scrutinizer-ci.com/g/PatronBase/omnipay-smartpay/code-structure)
-[![Code Quality](https://img.shields.io/scrutinizer/g/PatronBase/omnipay-gocardless.svg?style=flat)](https://scrutinizer-ci.com/g/PatronBase/omnipay-gocardless/?branch=master)
+[![Code Quality](https://img.shields.io/scrutinizer/g/PatronBase/omnipay-smartpay.svg?style=flat)](https://scrutinizer-ci.com/g/PatronBase/omnipay-smartpay/?branch=master)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md)
 [![Latest Stable Version](https://poser.pugx.org/PatronBase/omnipay-smartpay/version.png)](https://packagist.org/packages/patronbase/omnipay-smartpay)
-[![Total Downloads](https://poser.pugx.org/patronbase/omnipay-gocardless/d/total.png)](https://packagist.org/packages/patronbase/omnipay-smartpay)
+[![Total Downloads](https://poser.pugx.org/patronbase/omnipay-smartpay/d/total.png)](https://packagist.org/packages/patronbase/omnipay-smartpay)
 
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
@@ -22,7 +22,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "PatronBase/omnipay-smartpay": "~3.0"
+        "PatronBase/omnipay-smartpay": "~1.0"
     }
 }
 ```
