@@ -126,10 +126,9 @@ class PurchaseRequest extends AbstractRequest {
 
         $data['merchant_id'] = $this->getMerchantId();
         $data['access_code'] = $this->getAccessCode();
-        $data['tid'] = $this->getTransactionId();
         $data['amount'] = $this->getAmount();
         $data['currency'] = $this->getCurrency();
-        $data['order_id'] = $this->getOrderId();
+        $data['order_id'] = $this->getTransactionId();
         $data['redirect_url'] = $this->getReturnUrl();
         $data['cancel_url'] = $this->getCancelUrl();
         $data['merchant_param1'] = $this->getMerchantParameter1();
