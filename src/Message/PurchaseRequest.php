@@ -164,16 +164,11 @@ class PurchaseRequest extends AbstractRequest {
 
         $url = $this->getEndpoint() . '&encRequest=' . $encrypted_data . '&access_code=' . $this->getAccessCode();
 
-//        echo '<pre>'; print_r([
-//            'data' => $this->getData(),
-//            'merchant_data' => $merchant_data,
-//            'url' => $url
-//    ]); echo '</pre>'; die;
-//
-//        $httpResponse = $this->httpClient->request('POST', $this->getEndpoint());
-
         return $this->response = new PurchaseResponse($this, [
             'url' => $url,
+            'endpoint' => $this->getEndpoint(),
+            'enc_request' => $encrypted_data,
+            'access_code' => $this->getAccessCode(),
             'merchant_data' => $merchant_data
         ]);
     }
