@@ -137,6 +137,13 @@ class PurchaseRequest extends AbstractRequest {
         $data['merchant_param4'] = $this->getMerchantParameter4();
         $data['merchant_param5'] = $this->getMerchantParameter5();
 
+        if ( $this->getCard() ) {
+            $data['card_number'] = $this->getCard()->getNumber();
+            $data['expiry_month'] = $this->getCard()->getExpiryMonth();
+            $data['expiry_year'] = $this->getCard()->getExpiryYear();
+            $data['cvv_number'] = $this->getCard()->getCvv();
+        }
+
         return $data;
     }
 
@@ -157,6 +164,9 @@ class PurchaseRequest extends AbstractRequest {
                 $merchant_data[$k] = urlencode($v);
             }
         }
+
+        $merchant_data['redirect_url'] = $this->getReturnUrl();
+        $merchant_data['cancel_url'] = $this->getCancelUrl();
 
         $cryto = new Crypto();
 
