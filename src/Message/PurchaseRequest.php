@@ -12,7 +12,7 @@ use Omnipay\Common\Message\AbstractRequest;
 class PurchaseRequest extends AbstractRequest {
 
     const EP_HOST_TEST = 'https://mti.bankmuscat.com:6443/transaction.do?command=initiateTransaction';
-    const EP_HOST_LIVE = 'https://smartpaytrns.bankmuscat.com/transaction.do?command=initiateTransaction';
+    const EP_HOST_LIVE = 'https://spayuattrns.bmtest.om/transaction.do?command=initiateTransaction';
 
     public function initialize(array $parameters = []) 
     {
