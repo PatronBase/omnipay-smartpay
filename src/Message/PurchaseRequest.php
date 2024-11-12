@@ -8,11 +8,10 @@ use Omnipay\Common\Message\AbstractRequest;
 /**
  * Omnipay Bank Muscat Purchase Request
  */
-
 class PurchaseRequest extends AbstractRequest {
 
-    const EP_HOST_TEST = 'https://spayuattrns.bmtest.om/transaction.do?command=initiateTransaction';
-    const EP_HOST_LIVE = 'https://spayuattrns.bmtest.om/transaction.do?command=initiateTransaction';
+    const EP_HOST_TEST = 'https://mti.bankmuscat.com:6443/transaction.do?command=initiateTransaction';
+    const EP_HOST_LIVE = 'https://smartpaytrns.bankmuscat.com/transaction.do?command=initiateTransaction';
 
     public function initialize(array $parameters = []) 
     {
@@ -109,6 +108,86 @@ class PurchaseRequest extends AbstractRequest {
         return $this->setParameter('merchantParameter5', $parameter);
     }
 
+    public function setBillingName($billingName)
+    {
+        return $this->setParameter('billingName', $billingName);
+    }
+
+    public function getBillingName()
+    {
+        return $this->getParameter('billingName');
+    }
+
+    public function setBillingAddress($billingAddress)
+    {
+        return $this->setParameter('billingAddress', $billingAddress);
+    }
+
+    public function getBillingAddress()
+    {
+        return $this->getParameter('billingAddress');
+    }
+
+    public function setBillingCity($billingCity)
+    {
+        return $this->setParameter('billingCity', $billingCity);
+    }
+
+    public function getBillingCity()
+    {
+        return $this->getParameter('billingCity');
+    }
+
+    public function setBillingState($billingState)
+    {
+        return $this->setParameter('billingState', $billingState);
+    }
+
+    public function getBillingState()
+    {
+        return $this->getParameter('billingState');
+    }
+
+    public function setBillingZip($billingZip)
+    {
+        return $this->setParameter('billingZip', $billingZip);
+    }
+
+    public function getBillingZip()
+    {
+        return $this->getParameter('billingZip');
+    }
+
+    public function setBillingCountry($billingCountry)
+    {
+        return $this->setParameter('billingCountry', $billingCountry);
+    }
+
+    public function getBillingCountry()
+    {
+        return $this->getParameter('billingCountry');
+    }
+
+    public function setBillingEmail($billingEmail)
+    {
+        return $this->setParameter('billingEmail', $billingEmail);
+    }
+
+    public function getBillingEmail()
+    {
+        return $this->getParameter('billingEmail');
+    }
+
+    public function setBillingTel($billingTel)
+    {
+        return $this->setParameter('billingTel', $billingTel);
+    }
+
+    public function getBillingTel()
+    {
+        return $this->getParameter('billingTel');
+    }
+
     /**
      * Get data
      *
@@ -136,6 +215,14 @@ class PurchaseRequest extends AbstractRequest {
         $data['merchant_param3'] = $this->getMerchantParameter3();
         $data['merchant_param4'] = $this->getMerchantParameter4();
         $data['merchant_param5'] = $this->getMerchantParameter5();
+        $data['billing_name'] = $this->getBillingName();
+        $data['billing_address'] = $this->getBillingAddress();
+        $data['billing_city'] = $this->getBillingCity();
+        $data['billing_state'] = $this->getBillingState();
+        $data['billing_zip'] = $this->getBillingZip();
+        $data['billing_country'] = $this->getBillingCountry();
+        $data['billing_email'] = $this->getBillingEmail();
+        $data['billing_tel'] = $this->getBillingTel();
 
         if ( $this->getCard() ) {
             $data['card_number'] = $this->getCard()->getNumber();
@@ -175,10 +262,10 @@ class PurchaseRequest extends AbstractRequest {
         $url = $this->getEndpoint() . '&encRequest=' . $encrypted_data . '&access_code=' . $this->getAccessCode();
 
         return $this->response = new PurchaseResponse($this, [
-            'url' => $url,
-            'endpoint' => $this->getEndpoint(),
-            'enc_request' => $encrypted_data,
-            'access_code' => $this->getAccessCode(),
+            'url'           => $url,
+            'endpoint'      => $this->getEndpoint(),
+            'enc_request'   => $encrypted_data,
+            'access_code'   => $this->getAccessCode(),
             'merchant_data' => $merchant_data
         ]);
     }
