@@ -22,7 +22,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "PatronBase/omnipay-smartpay": "~1.0"
+        "PatronBase/omnipay-smartpay": "~1.1"
     }
 }
 ```
